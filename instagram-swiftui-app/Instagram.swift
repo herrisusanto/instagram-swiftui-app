@@ -1,6 +1,6 @@
 //
-//  instagram_swiftui_appApp.swift
-//  instagram-swiftui-app
+//  instagram.swift
+//  instagram
 //
 //  Created by loratech on 23/01/24.
 //
@@ -8,7 +8,7 @@
 import SwiftUI
 
 @main
-struct instagram_swiftui_appApp: App {
+struct Instagram: App {
     var body: some Scene {
         WindowGroup {
             ContentView()
