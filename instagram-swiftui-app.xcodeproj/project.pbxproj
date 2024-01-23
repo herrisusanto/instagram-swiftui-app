@@ -11,6 +11,7 @@
 		0FAF72B12B5FE696002D08B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72B02B5FE696002D08B9 /* ContentView.swift */; };
 		0FAF72B32B5FE698002D08B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAF72B22B5FE698002D08B9 /* Assets.xcassets */; };
 		0FAF72B62B5FE698002D08B9 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAF72B52B5FE698002D08B9 /* Preview Assets.xcassets */; };
+		0FAF72C92B5FF63E002D08B9 /* MainTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72C82B5FF63E002D08B9 /* MainTabBarView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +20,7 @@
 		0FAF72B02B5FE696002D08B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		0FAF72B22B5FE698002D08B9 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0FAF72B52B5FE698002D08B9 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		0FAF72C82B5FF63E002D08B9 /* MainTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabBarView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,6 +53,11 @@
 		0FAF72AD2B5FE696002D08B9 /* instagram-swiftui-app */ = {
 			isa = PBXGroup;
 			children = (
+				0FAF72BC2B5FE926002D08B9 /* App */,
+				0FAF72BD2B5FE930002D08B9 /* Core */,
+				0FAF72BE2B5FE946002D08B9 /* Extensions */,
+				0FAF72C02B5FE95D002D08B9 /* Model */,
+				0FAF72BF2B5FE94E002D08B9 /* Service */,
 				0FAF72AE2B5FE696002D08B9 /* Instagram.swift */,
 				0FAF72B02B5FE696002D08B9 /* ContentView.swift */,
 				0FAF72B22B5FE698002D08B9 /* Assets.xcassets */,
@@ -65,6 +72,106 @@
 				0FAF72B52B5FE698002D08B9 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		0FAF72BC2B5FE926002D08B9 /* App */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = App;
+			sourceTree = "<group>";
+		};
+		0FAF72BD2B5FE930002D08B9 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				0FAF72C12B5FE994002D08B9 /* Authentication */,
+				0FAF72C22B5FF5A9002D08B9 /* Feed */,
+				0FAF72C32B5FF5B0002D08B9 /* Profile */,
+				0FAF72C42B5FF5B7002D08B9 /* Root */,
+				0FAF72C52B5FF5C0002D08B9 /* Search */,
+				0FAF72C62B5FF5CE002D08B9 /* TabBar */,
+				0FAF72C72B5FF5DB002D08B9 /* UploadPost */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		0FAF72BE2B5FE946002D08B9 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0FAF72BF2B5FE94E002D08B9 /* Service */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Service;
+			sourceTree = "<group>";
+		};
+		0FAF72C02B5FE95D002D08B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0FAF72C12B5FE994002D08B9 /* Authentication */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Authentication;
+			sourceTree = "<group>";
+		};
+		0FAF72C22B5FF5A9002D08B9 /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		0FAF72C32B5FF5B0002D08B9 /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		0FAF72C42B5FF5B7002D08B9 /* Root */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Root;
+			sourceTree = "<group>";
+		};
+		0FAF72C52B5FF5C0002D08B9 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		0FAF72C62B5FF5CE002D08B9 /* TabBar */ = {
+			isa = PBXGroup;
+			children = (
+				0FAF72CA2B5FF797002D08B9 /* View */,
+			);
+			path = TabBar;
+			sourceTree = "<group>";
+		};
+		0FAF72C72B5FF5DB002D08B9 /* UploadPost */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = UploadPost;
+			sourceTree = "<group>";
+		};
+		0FAF72CA2B5FF797002D08B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FAF72C82B5FF63E002D08B9 /* MainTabBarView.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -138,6 +245,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FAF72B12B5FE696002D08B9 /* ContentView.swift in Sources */,
+				0FAF72C92B5FF63E002D08B9 /* MainTabBarView.swift in Sources */,
 				0FAF72AF2B5FE696002D08B9 /* Instagram.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
