@@ -19,8 +19,12 @@ struct ProfileView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 8) {
-                        Circle()
+                        Image("jisso")
+                            .resizable()
+                            .scaledToFill()
                             .frame(width: 84, height: 84)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
+                            
                         
                         Spacer()
                         

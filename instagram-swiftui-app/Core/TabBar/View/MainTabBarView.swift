@@ -10,7 +10,7 @@ import SwiftUI
 struct MainTabBarView: View {
     var body: some View {
         TabView{
-            Text("Feed")
+            FeedView()
                 .tabItem {
                     Image(systemName: "house")
                 }
