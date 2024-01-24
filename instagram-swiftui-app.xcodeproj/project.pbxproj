@@ -16,6 +16,7 @@
 		0FAF72D02B5FFBF3002D08B9 /* UserStatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72CF2B5FFBF3002D08B9 /* UserStatView.swift */; };
 		0FAF72D32B60AAAA002D08B9 /* FeedView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72D22B60AAAA002D08B9 /* FeedView.swift */; };
 		0FAF72D52B60AABA002D08B9 /* FeedCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72D42B60AABA002D08B9 /* FeedCell.swift */; };
+		0FAF72D82B60B4CB002D08B9 /* SearchView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72D72B60B4CB002D08B9 /* SearchView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,6 +30,7 @@
 		0FAF72CF2B5FFBF3002D08B9 /* UserStatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UserStatView.swift; sourceTree = "<group>"; };
 		0FAF72D22B60AAAA002D08B9 /* FeedView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedView.swift; sourceTree = "<group>"; };
 		0FAF72D42B60AABA002D08B9 /* FeedCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCell.swift; sourceTree = "<group>"; };
+		0FAF72D72B60B4CB002D08B9 /* SearchView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -158,6 +160,7 @@
 		0FAF72C52B5FF5C0002D08B9 /* Search */ = {
 			isa = PBXGroup;
 			children = (
+				0FAF72D62B60B4BA002D08B9 /* View */,
 			);
 			path = Search;
 			sourceTree = "<group>";
@@ -206,6 +209,14 @@
 			children = (
 				0FAF72D22B60AAAA002D08B9 /* FeedView.swift */,
 				0FAF72D42B60AABA002D08B9 /* FeedCell.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0FAF72D62B60B4BA002D08B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0FAF72D72B60B4CB002D08B9 /* SearchView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -284,6 +295,7 @@
 				0FAF72CD2B5FF7FA002D08B9 /* ProfileView.swift in Sources */,
 				0FAF72B12B5FE696002D08B9 /* ContentView.swift in Sources */,
 				0FAF72C92B5FF63E002D08B9 /* MainTabBarView.swift in Sources */,
+				0FAF72D82B60B4CB002D08B9 /* SearchView.swift in Sources */,
 				0FAF72D02B5FFBF3002D08B9 /* UserStatView.swift in Sources */,
 				0FAF72D32B60AAAA002D08B9 /* FeedView.swift in Sources */,
 				0FAF72AF2B5FE696002D08B9 /* Instagram.swift in Sources */,
