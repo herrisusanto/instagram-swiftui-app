@@ -7,25 +7,23 @@
 
 import SwiftUI
 
-struct ProfileView: View {
+struct CurrentUserProfileView: View {
     
-    let user: User
     private let gridItems: [GridItem] = [
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1),
         .init(.flexible(), spacing: 1)
     ]
     var body: some View {
+        NavigationStack {
             ScrollView {
                 VStack(alignment: .leading, spacing: 10) {
                     HStack(spacing: 8) {
-                        if let imageUrl = user.profileImageUrl {
-                            Image(imageUrl)
-                                .resizable()
-                                .scaledToFill()
-                                .frame(width: 84, height: 84)
-                                .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                        }
+                        Image("jisso")
+                            .resizable()
+                            .scaledToFill()
+                            .frame(width: 84, height: 84)
+                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
                             
                         
                         Spacer()
@@ -38,17 +36,15 @@ struct ProfileView: View {
                     }
                     .padding(.bottom)
                     
-                    VStack(alignment: .leading, spacing: 4) {
-                        if let fullName = user.fullname {
-                            Text(fullName)
-                                .fontWeight(.semibold)
-                        }
-                        if let bio = user.bio {
-                            Text(bio)
-                        }
+                    VStack {
+                        Text("Jennie Blackpink")
+                            .font(.footnote)
+                            .fontWeight(.semibold)
+                        
+                        Text("Wakanda Forever")
+                            .font(.footnote)
                         
                     }
-                    .font(.footnote)
                     .frame(maxWidth: .infinity, alignment: .leading)
                     
                     Button{
@@ -81,9 +77,21 @@ struct ProfileView: View {
             .navigationTitle("Profile")
             .navigationBarTitleDisplayMode(.inline)
             .scrollIndicators(.hidden)
+            .toolbar{
+                ToolbarItem {
+                    Button{
+                        
+                    }label:{
+                        Image(systemName: "line.3.horizontal")
+                            .foregroundStyle(.black)
+                    }
+                }
+            }
+            
+        }
     }
 }
 
 #Preview {
-    ProfileView(user: User.MOCK_USERS[0])
+    CurrentUserProfileView()
 }
