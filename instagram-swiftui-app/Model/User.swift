@@ -20,8 +20,8 @@ struct User: Identifiable, Codable, Hashable {
 extension User {
     static var MOCK_USERS: [User] = [
         .init(id: NSUUID().uuidString, username: "jennie",profileImageUrl: "jennie",fullname: "Jennie Blackpink",bio: "I'm member of Blackpink", email: "jennie@blackpink.com"),
-        .init(id: NSUUID().uuidString, username: "jennie",profileImageUrl: "rose",fullname: "Jennie Blackpink",bio: "I'm member of Blackpink", email: "jennie@blackpink.com"),
-        .init(id: NSUUID().uuidString, username: "jennie",profileImageUrl: "lisa",fullname: "Lissa Blackpink",bio: "I'm member of Blackpink", email: "lisa@blackpink.com")
+        .init(id: NSUUID().uuidString, username: "rose",profileImageUrl: "rose",fullname: "Jennie Blackpink",bio: "I'm member of Blackpink", email: "jennie@blackpink.com"),
+        .init(id: NSUUID().uuidString, username: "lisa",profileImageUrl: "lisa",fullname: "Lissa Blackpink",bio: "I'm member of Blackpink", email: "lisa@blackpink.com")
     ]
 }
 

@@ -8,69 +8,18 @@
 import SwiftUI
 
 struct CurrentUserProfileView: View {
+    let user: User
     
-    private let gridItems: [GridItem] = [
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1)
-    ]
+    var posts:[Post] {
+        return Post.MOCK_POSTS.filter({$0.user?.username == user.username})
+    }
+     
     var body: some View {
         NavigationStack {
             ScrollView {
-                VStack(alignment: .leading, spacing: 10) {
-                    HStack(spacing: 8) {
-                        Image("jisso")
-                            .resizable()
-                            .scaledToFill()
-                            .frame(width: 84, height: 84)
-                            .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                            
-                        
-                        Spacer()
-                        
-                        UserStatView(value: 23, title: "Posts")
-                        
-                        UserStatView(value: 11, title: "Followers")
-                        
-                        UserStatView(value: 33, title: "Following")
-                    }
-                    .padding(.bottom)
-                    
-                    VStack {
-                        Text("Jennie Blackpink")
-                            .font(.footnote)
-                            .fontWeight(.semibold)
-                        
-                        Text("Wakanda Forever")
-                            .font(.footnote)
-                        
-                    }
-                    .frame(maxWidth: .infinity, alignment: .leading)
-                    
-                    Button{
-                        
-                    }label:{
-                        Text("Edit Profile")
-                            .font(.subheadline)
-                            .fontWeight(.semibold)
-                            .frame(width: 360, height: 32)
-                            .foregroundStyle(.black)
-                            .overlay {
-                                RoundedRectangle(cornerRadius: 6)
-                                    .stroke(Color.gray, lineWidth: 1)
-                            }
-                    }
-                    
-                    Divider()
-                }
+                ProfileHeaderView(user: user)
                 
-                LazyVGrid(columns: gridItems, spacing: 1){
-                    ForEach(0 ... 20, id:\.self){ index in
-                        Image("jennie")
-                            .resizable()
-                            .scaledToFit()
-                    }
-                }
+                PostGridView(posts: posts)
                 
             }
             .padding()
@@ -93,5 +42,5 @@ struct CurrentUserProfileView: View {
 }
 
 #Preview {
-    CurrentUserProfileView()
+    CurrentUserProfileView(user: User.MOCK_USERS[0])
 }
