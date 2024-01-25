@@ -11,6 +11,8 @@
 		0F9691072B624EB900AFB5B1 /* Post.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9691062B624EB900AFB5B1 /* Post.swift */; };
 		0F9691092B625D8300AFB5B1 /* PostGridView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9691082B625D8300AFB5B1 /* PostGridView.swift */; };
 		0F96910B2B6260F200AFB5B1 /* ProfileHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F96910A2B6260F200AFB5B1 /* ProfileHeaderView.swift */; };
+		0F96910E2B629F3500AFB5B1 /* UploadPostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F96910D2B629F3500AFB5B1 /* UploadPostView.swift */; };
+		0F9691112B62A2D100AFB5B1 /* UploadPostViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0F9691102B62A2D100AFB5B1 /* UploadPostViewModel.swift */; };
 		0FAF72AF2B5FE696002D08B9 /* Instagram.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72AE2B5FE696002D08B9 /* Instagram.swift */; };
 		0FAF72B12B5FE696002D08B9 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0FAF72B02B5FE696002D08B9 /* ContentView.swift */; };
 		0FAF72B32B5FE698002D08B9 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0FAF72B22B5FE698002D08B9 /* Assets.xcassets */; };
@@ -35,6 +37,8 @@
 		0F9691062B624EB900AFB5B1 /* Post.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Post.swift; sourceTree = "<group>"; };
 		0F9691082B625D8300AFB5B1 /* PostGridView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostGridView.swift; sourceTree = "<group>"; };
 		0F96910A2B6260F200AFB5B1 /* ProfileHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileHeaderView.swift; sourceTree = "<group>"; };
+		0F96910D2B629F3500AFB5B1 /* UploadPostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostView.swift; sourceTree = "<group>"; };
+		0F9691102B62A2D100AFB5B1 /* UploadPostViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UploadPostViewModel.swift; sourceTree = "<group>"; };
 		0FAF72AB2B5FE696002D08B9 /* instagram-swiftui-app.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "instagram-swiftui-app.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		0FAF72AE2B5FE696002D08B9 /* Instagram.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Instagram.swift; sourceTree = "<group>"; };
 		0FAF72B02B5FE696002D08B9 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -66,6 +70,22 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0F96910C2B629F2900AFB5B1 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				0F96910D2B629F3500AFB5B1 /* UploadPostView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0F96910F2B62A2C100AFB5B1 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0F9691102B62A2D100AFB5B1 /* UploadPostViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		0FAF72A22B5FE696002D08B9 = {
 			isa = PBXGroup;
 			children = (
@@ -201,6 +221,8 @@
 		0FAF72C72B5FF5DB002D08B9 /* UploadPost */ = {
 			isa = PBXGroup;
 			children = (
+				0F96910F2B62A2C100AFB5B1 /* ViewModel */,
+				0F96910C2B629F2900AFB5B1 /* View */,
 			);
 			path = UploadPost;
 			sourceTree = "<group>";
@@ -333,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				0FAF72D52B60AABA002D08B9 /* FeedCell.swift in Sources */,
+				0F96910E2B629F3500AFB5B1 /* UploadPostView.swift in Sources */,
 				0FAF72E72B60C65E002D08B9 /* CompleteSignUpView.swift in Sources */,
 				0F9691052B62409900AFB5B1 /* CurrentUserProfileView.swift in Sources */,
 				0FAF72E52B60C548002D08B9 /* CreatePasswordView.swift in Sources */,
@@ -342,6 +365,7 @@
 				0FAF72DB2B60B6D8002D08B9 /* LoginView.swift in Sources */,
 				0F9691092B625D8300AFB5B1 /* PostGridView.swift in Sources */,
 				0FAF72C92B5FF63E002D08B9 /* MainTabBarView.swift in Sources */,
+				0F9691112B62A2D100AFB5B1 /* UploadPostViewModel.swift in Sources */,
 				0F96910B2B6260F200AFB5B1 /* ProfileHeaderView.swift in Sources */,
 				0FAF72D82B60B4CB002D08B9 /* SearchView.swift in Sources */,
 				0FAF72E92B60ECC0002D08B9 /* User.swift in Sources */,
