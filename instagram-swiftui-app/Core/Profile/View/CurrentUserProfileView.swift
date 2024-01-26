@@ -29,7 +29,7 @@ struct CurrentUserProfileView: View {
             .toolbar{
                 ToolbarItem {
                     Button{
-                        
+                        AuthService.shared.signOut()
                     }label:{
                         Image(systemName: "line.3.horizontal")
                             .foregroundStyle(.black)

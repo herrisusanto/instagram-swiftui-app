@@ -7,9 +7,10 @@
 
 import SwiftUI
 
-struct CreateUserName: View {
-    @State private var username = ""
+struct CreateUserNameView: View {
+    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel : RegistrationViewModel
     
     var body: some View {
         VStack(spacing: 12) {
@@ -24,7 +25,7 @@ struct CreateUserName: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            TextField("Username", text: $username)
+            TextField("Username", text: $viewModel.username)
                 .autocapitalization(.none)
                 .modifier(TextFieldModifier())
             
@@ -37,10 +38,11 @@ struct CreateUserName: View {
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                     .frame(width: 340, height: 44)
-                    .background(.blue)
+                    .background(viewModel.username.isEmpty ? .gray: .blue)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
             .padding(.vertical)
+            .disabled(viewModel.username.isEmpty)
             
             Spacer()
         }
@@ -57,5 +59,5 @@ struct CreateUserName: View {
 }
 
 #Preview {
-    CreateUserName()
+    CreateUserNameView()
 }

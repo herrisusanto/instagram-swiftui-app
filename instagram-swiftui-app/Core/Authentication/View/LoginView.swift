@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct LoginView: View {
-    @State private var email = ""
-    @State private var password = ""
+    
+    @StateObject var viewModel = LoginViewModel() 
+    
     var body: some View {
         NavigationStack {
             VStack {
@@ -20,17 +21,19 @@ struct LoginView: View {
                     .frame(width: 220, height: 100)
                 
                 VStack {
-                    TextField("Enter your email", text: $email)
+                    TextField("Enter your email", text: $viewModel.email)
                         .autocapitalization(.none)
                         .modifier(TextFieldModifier())
                     
-                    SecureField("Password", text: $password) 
+                    SecureField("Password", text: $viewModel.password)
                         .modifier(TextFieldModifier())
-                        
+                    
                 }
                 
                 Button{
-                    print("forget password")
+                    Task {
+                        try await viewModel.login()
+                    }
                 }label: {
                     Text("Forget Password?")
                         .font(.footnote)
@@ -41,17 +44,25 @@ struct LoginView: View {
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 
                 Button {
-                    print("login button!")
+                    Task {
+                        try await viewModel.login()
+                    }
                 }label: {
-                    Text("Login")
-                        .font(.subheadline)
-                        .fontWeight(.semibold)
-                        .foregroundStyle(.white)
-                        .frame(width: 340, height: 44)
-                        .background(.blue)
-                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                    if viewModel.isLoading {
+                        ProgressView()
+                    } else {
+                        Text("Login")
+                            .font(.subheadline)
+                            .fontWeight(.semibold)
+                            .foregroundStyle(.white)
+                            .frame(width: 340, height: 44)
+                            .background(viewModel.disableButton ?.gray : .blue)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                    }
+                    
                 }
                 .padding(.vertical)
+                .disabled(viewModel.disableButton)
                 
                 HStack {
                     Rectangle()
@@ -92,7 +103,7 @@ struct LoginView: View {
                     .font(.footnote)
                 }
                 .padding(.vertical)
-                 
+                
             }
         }
     }

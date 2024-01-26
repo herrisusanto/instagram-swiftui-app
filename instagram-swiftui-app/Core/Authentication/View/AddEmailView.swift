@@ -8,8 +8,10 @@
 import SwiftUI
 
 struct AddEmailView: View {
-    @State private var email = ""
+    
     @Environment(\.dismiss) var dismiss
+    @EnvironmentObject var viewModel: RegistrationViewModel
+    
     var body: some View {
         VStack(spacing: 12) {
             Text("Add your email")
@@ -23,12 +25,12 @@ struct AddEmailView: View {
                 .multilineTextAlignment(.center)
                 .padding(.horizontal, 24)
             
-            TextField("Email", text: $email)
+            TextField("Email", text: $viewModel.email)
                 .autocapitalization(.none)
                 .modifier(TextFieldModifier())
             
             NavigationLink {
-                CreateUserName()
+                CreateUserNameView()
                     .navigationBarBackButtonHidden()
             }label: {
                 Text("Next")
@@ -36,10 +38,12 @@ struct AddEmailView: View {
                     .fontWeight(.semibold)
                     .foregroundStyle(.white)
                     .frame(width: 340, height: 44)
-                    .background(.blue)
+                    .background(viewModel.email.isEmpty ? .gray : .blue)
                     .clipShape(RoundedRectangle(cornerRadius: 8))
             }
             .padding(.vertical)
+            .disabled(viewModel.email.isEmpty)
+            
             
             Spacer()
         }
