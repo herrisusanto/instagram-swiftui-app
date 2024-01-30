@@ -10,7 +10,7 @@ import Firebase
 
 struct Post: Identifiable, Hashable, Codable {
     let id: String
-    let owner: String
+    let ownerId: String
     let caption: String
     var likes: Int
     let imageUrl: String
@@ -20,8 +20,8 @@ struct Post: Identifiable, Hashable, Codable {
 
 extension Post {
     static var MOCK_POSTS: [Post] = [
-        .init(id: NSUUID().uuidString, owner: NSUUID().uuidString, caption: "I'm blackpink", likes: 1000, imageUrl: "jennie", timestamp: Timestamp(), user: User.MOCK_USERS[0]),
-        .init(id: NSUUID().uuidString, owner: NSUUID().uuidString, caption: "I'm blackpink", likes: 1000, imageUrl: "jennie", timestamp: Timestamp(), user: User.MOCK_USERS[0]),
-        .init(id: NSUUID().uuidString, owner: NSUUID().uuidString, caption: "I'm blackpink", likes: 1000, imageUrl: "jennie", timestamp: Timestamp(), user: User.MOCK_USERS[0])
+        .init(id: NSUUID().uuidString, ownerId: NSUUID().uuidString, caption: "I'm blackpink", likes: 1000, imageUrl: "jennie", timestamp: Timestamp(), user: User.MOCK_USERS[0]),
+        .init(id: NSUUID().uuidString, ownerId: NSUUID().uuidString, caption: "I'm blackpink", likes: 1000, imageUrl: "jennie", timestamp: Timestamp(), user: User.MOCK_USERS[0]),
+        .init(id: NSUUID().uuidString, ownerId: NSUUID().uuidString, caption: "I'm blackpink", likes: 1000, imageUrl: "jennie", timestamp: Timestamp(), user: User.MOCK_USERS[0])
     ]
 }

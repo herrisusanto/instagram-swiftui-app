@@ -14,7 +14,7 @@ struct PostService {
         var posts = try snapshot.documents.compactMap({ try $0.data(as: Post.self)})
         
         for i in 0 ..< posts.count {
-            let ownerId = posts[i].owner
+            let ownerId = posts[i].ownerId
             let postUser = try await UserService.fetchUser(withUid: ownerId)
             posts[i].user = postUser
         }
@@ -22,7 +22,7 @@ struct PostService {
     }
     
     static func fetchUserPost(withUid uid: String) async throws -> [Post] {
-        let snapshot = try await FirebaseConstant.postCollection.whereField("owner", isEqualTo: uid).getDocuments()
+        let snapshot = try await FirebaseConstant.postCollection.whereField("ownerId", isEqualTo: uid).getDocuments()
         return try snapshot.documents.compactMap({try $0.data(as: Post.self)})
     }
 }
