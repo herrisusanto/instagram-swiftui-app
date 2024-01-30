@@ -19,7 +19,7 @@ struct CurrentUserProfileView: View {
             ScrollView {
                 ProfileHeaderView(user: user)
                 
-                PostGridView(posts: posts)
+                PostGridView(user: user)
                 
             }
             .padding()

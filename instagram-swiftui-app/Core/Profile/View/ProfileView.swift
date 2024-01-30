@@ -11,23 +11,12 @@ struct ProfileView: View {
     
     let user: User
     
-    private let gridItems: [GridItem] = [
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1),
-        .init(.flexible(), spacing: 1)
-    ]
-    
-    private let imageDimension: CGFloat = (UIScreen.main.bounds.width / 3) - 1
-    
-    var posts: [Post] {
-        return Post.MOCK_POSTS.filter({$0.user?.username == user.username})
-    }
     var body: some View {
             ScrollView {
                 ProfileHeaderView(user: user)
                 
                 
-                PostGridView(posts: posts)
+                PostGridView(user: user)
                 
             }
             .navigationTitle("Profile")

@@ -21,7 +21,7 @@ struct EditProfileView: View {
             VStack {
                 HStack {
                     Button("Cancel"){
-                        
+                        dismiss()
                     }
                     
                     Spacer()
