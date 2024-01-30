@@ -36,7 +36,7 @@ struct MainTabBarView: View {
                     Image(systemName: "plus.square")
                 }
                 .tag(2)
-            Text("Notifications")
+            InboxView()
                 .onAppear{
                     selectedIndex = 3
                 }

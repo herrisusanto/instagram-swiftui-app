@@ -8,10 +8,25 @@
 import SwiftUI
 
 struct InboxView: View {
+    
+    @State private var selectedUser: User?
+    @State private var showChat = false
+    @StateObject var viewModel = InboxViewModel()
+    
+    private var user: User? {
+        return viewModel.currentUser
+    }
+    
     var body: some View {
         NavigationStack {
             List {
-                ForEach(Message.MOCK_MESSAGES){ message in
+                ActiveNowView()
+                    .listRowSeparator(.hidden)
+                    .listRowInsets(EdgeInsets())
+                    .padding(.vertical)
+                    .padding(.horizontal, 4)
+                
+                ForEach(viewModel.recentMessages){ message in
                     ZStack {
                         NavigationLink(value: message){
                             EmptyView()
@@ -24,6 +39,11 @@ struct InboxView: View {
             .navigationTitle("Inbox")
             .navigationBarTitleDisplayMode(.inline)
             .listStyle(PlainListStyle())
+            .navigationDestination(for: Message.self) { message in
+                if let user = message.user {
+                    ChatView(user: user)
+                }
+            }
         }
     }
 }
