@@ -33,8 +33,7 @@ class AuthService {
     
     @MainActor
     func createUser(email: String, password: String, username: String) async throws {
-        do {
-            print("password is here: \(password)")
+        do { 
             let result = try await Auth.auth().createUser(withEmail: email, password: password)
             self.userSession = result.user
             await uploadUserData(uid: result.user.uid, email: email, username: username)

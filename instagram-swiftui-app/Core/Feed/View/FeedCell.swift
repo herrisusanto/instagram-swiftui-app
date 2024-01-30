@@ -77,7 +77,7 @@ struct FeedCell: View {
             .padding(.leading, 10)
             .padding(.top, 1)
             
-            Text("1h ago")
+            Text(post.timestampAgo)
                 .font(.footnote)
                 .frame(maxWidth: .infinity, alignment: .leading)
                 .padding(.leading, 10)

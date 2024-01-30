@@ -36,7 +36,7 @@ class ProfileViewModel: ObservableObject {
             self.bio = bio
         }
     }
-    
+    @MainActor
     func loadImage() async throws {
         guard let item = selectedItem else { return }
         guard let imageData = try await item.loadTransferable(type: Data.self) else { return }

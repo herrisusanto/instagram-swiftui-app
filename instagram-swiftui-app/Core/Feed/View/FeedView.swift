@@ -30,9 +30,16 @@ struct FeedView: View {
                 }
                 
                 ToolbarItem(placement: .topBarTrailing){
-                    Image(systemName: "paperplane")
-                        .imageScale(.large)
+                    Button{
+//                        InboxView()
+                    }label: {
+                        Image(systemName: "paperplane")
+                            .imageScale(.large)
+                            .foregroundStyle(.black)
+                    }
+                    
                 }
+                
             }
         }
     }

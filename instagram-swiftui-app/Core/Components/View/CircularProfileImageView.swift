@@ -38,6 +38,7 @@ struct CircularProfileImageView: View {
     
     var user: User?
     let size: ProfileImageSize
+    
     var body: some View {
         if let imageUrl = user?.profileImageUrl {
             KFImage(URL(string: imageUrl))
