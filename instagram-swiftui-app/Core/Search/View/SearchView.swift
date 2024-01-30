@@ -9,12 +9,13 @@ import SwiftUI
 
 struct SearchView: View {
     @State private var searchText = ""
+    @StateObject var viewModel = SearchViewModel()
      
     var body: some View {
         NavigationStack {
             ScrollView {
                 LazyVStack(spacing: 12) {
-                    ForEach(User.MOCK_USERS) { user in
+                    ForEach(viewModel.users) { user in
                         NavigationLink(value: user) {
                             UserRowView(user: user)
                         }
@@ -41,13 +42,7 @@ struct UserRowView: View {
     let user: User
     var body: some View {
         HStack {
-            if let imageUrl = user.profileImageUrl {
-                Image(imageUrl)
-                    .resizable()
-                    .scaledToFill()
-                    .frame(width: 40, height: 40)
-                    .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-            }
+            CircularProfileImageView(user: user, size: .large)
             VStack(alignment: .leading) {
                 Text(user.username)
                     .fontWeight(.semibold)

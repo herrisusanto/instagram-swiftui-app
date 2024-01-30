@@ -9,18 +9,13 @@ import SwiftUI
 
 struct ProfileHeaderView: View {
     let user: User
+    @State var showEditProfile = false
     
     var body: some View {
         VStack(alignment: .leading, spacing: 10) {
             HStack(spacing: 8) {
-                if let imageUrl = user.profileImageUrl {
-                    Image(imageUrl)
-                        .resizable()
-                        .scaledToFill()
-                        .frame(width: 84, height: 84)
-                        .clipShape(/*@START_MENU_TOKEN@*/Circle()/*@END_MENU_TOKEN@*/)
-                }
-                    
+                CircularProfileImageView(user: user, size: .xLarge)
+                
                 
                 Spacer()
                 
@@ -48,21 +43,30 @@ struct ProfileHeaderView: View {
             .frame(maxWidth: .infinity, alignment: .leading)
             
             Button{
-                
+                if user.isCurrentUser {
+                    showEditProfile.toggle()
+                } else {
+                    print("follow user")
+                }
             }label:{
-                Text("Edit Profile")
+                Text(user.isCurrentUser ? "Edit Profile" : "Follow")
                     .font(.subheadline)
                     .fontWeight(.semibold)
                     .frame(width: 360, height: 32)
-                    .foregroundStyle(.black)
+                    .background(user.isCurrentUser ? .white : Color(.systemBlue))
+                    .foregroundStyle(user.isCurrentUser ? .black : .white)
+                    .cornerRadius(6)
                     .overlay {
                         RoundedRectangle(cornerRadius: 6)
-                            .stroke(Color.gray, lineWidth: 1)
+                            .stroke(user.isCurrentUser ? .gray : .clear, lineWidth: 1)
                     }
             }
             .padding(.horizontal)
             
             Divider()
+        }
+        .fullScreenCover(isPresented: $showEditProfile){
+            EditProfileView(user: user)
         }
     }
 }

@@ -12,6 +12,7 @@ struct FirebaseConstant {
     
     static let userCollection = Firestore.firestore().collection("users")
     static let messageCollection = Firestore.firestore().collection("messages")
+    static let postCollection = Firestore.firestore().collection("posts")
     
 }
 
